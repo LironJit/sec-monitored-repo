@@ -10,7 +10,6 @@ public class XXEVulnerableExample {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             documentBuilderFactory.setFeature("http://xml.org/sax/features/external-general-entities", true);
             
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -25,7 +24,6 @@ public class XXEVulnerableExample2 {
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             documentBuilderFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", true);
             
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         } catch (Exception e) {
             e.printStackTrace();
         }
