@@ -1,6 +1,6 @@
         public string BlindWithHttpClient(string path)
         {
-            string result = "Message was sended";
+            string result = "Message was sent";
 
             HttpClient client = new HttpClient();
 
