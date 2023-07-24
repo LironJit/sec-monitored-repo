@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -21,14 +21,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   remediation-pr:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'remediation-pr' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-remediation-pr'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: remediation-pr
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -38,14 +38,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   secret-detection:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-secret-detection'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: gitleaks
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -55,14 +55,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   software-component-analysis-snyk:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-snyk' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sca'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: snyk
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -71,14 +71,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-snyk:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-snyk' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: snyk
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -87,3 +87,4 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
+        
