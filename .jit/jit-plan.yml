@@ -1,5 +1,6 @@
 name: My plan
 level: beginner
+update_id: 86ce2150-f7d7-4929-a7a2-a11ec2fe6724
 author: Jit
 version: 0.1
 owners:
@@ -9,24 +10,13 @@ references:
 tags: []
 items:
   - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your code dependencies for vulnerabilities (SCA)
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
-    sca:
-      jobs:
-        software-component-analysis:
-          enabled: false
-        software-component-analysis-go:
-          enabled: false
-        software-component-analysis-js:
-          enabled: false
-        software-component-analysis-snyk:
-          enabled: true
     sast:
       jobs:
         static-code-analysis-csharp:
@@ -51,3 +41,13 @@ override:
           enabled: true
         static-code-analysis-swift:
           enabled: false
+    sca:
+      jobs:
+        software-component-analysis:
+          enabled: false
+        software-component-analysis-go:
+          enabled: false
+        software-component-analysis-js:
+          enabled: false
+        software-component-analysis-snyk:
+          enabled: true
