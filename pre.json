@@ -1,0 +1,768 @@
+{
+    "errors": [],
+    "paths": {
+        "_comment": "<add --verbose for a list of skipped paths>",
+        "scanned": [
+            ".json",
+            "package-lock.json",
+            "package.json"
+        ]
+    },
+    "results": [
+        {
+            "check_id": "ssc-6398a285-e9ef-40bd-b721-4b88991110ae",
+            "end": {
+                "col": 0,
+                "line": 886,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "c71a03bf406416b9e5c51f4898cfb6ed67f331c06068483bcce1a1f5fc0349bb57e8cfe88704e2300eb5560bac84ca549ca52b69c410f47515b5de24fa6fe277_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/glob-parent\": {\n      \"version\": \"3.1.0\",",
+                "message": "This affects the package glob-parent before 5.1.2. The enclosure regex used to check for strings ending in enclosure containing path separator. Please upgrade to 5.1.2. https://github.com/advisories/GHSA-ww39-953v-wcq6\n",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "patch-diff": "https://github.com/gulpjs/glob-parent/pull/36",
+                    "publish-date": "2021-06-07T21:56:34Z",
+                    "references": [
+                        "https://github.com/advisories/GHSA-ww39-953v-wcq6",
+                        "https://nvd.nist.gov/vuln/detail/CVE-2020-28469"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "glob-parent": "5.1.2"
+                        }
+                    ],
+                    "sca-kind": "reachable",
+                    "sca-legacy-identifier": "glob-parent-regex-dos",
+                    "sca-schema": 20230302,
+                    "sca-severity": "HIGH",
+                    "sca-vuln-database-identifier": "CVE-2020-28469",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-6398a285-e9ef-40bd-b721-4b88991110ae&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "glob-parent",
+                            "semver_range": "< 5.1.2"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "13c024ff6f9d658e9f9f3951efeb9e5af86c1f54a31ebe238ecb38612fe1e29cb8e2363d3212bf54575a6490160f3e816cbdb529eb5e2b1152169abc392e6054"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 885,
+                            "package": "glob-parent",
+                            "resolved_url": "https://registry.npmjs.org/glob-parent/-/glob-parent-3.1.0.tgz",
+                            "transitivity": "transitive",
+                            "version": "3.1.0"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": true,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "ERROR"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 885,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-f393d233-855d-49c5-a1c5-7a742519601a",
+            "end": {
+                "col": 0,
+                "line": 224,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4e99b42a8a7d780e33ea209624fd9f68cdd0ce0a05303aad45acf59c5da7e33afb5bea66dc3f461f2b7dac337f7bc36a097a85ee39cc5438c083095d3bd6fe35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/broadway/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "Minimist <=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).\n",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "namespace": "npm",
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "package-name": "minimist",
+                    "patch-diff": "https://github.com/substack/minimist/pull/165/files",
+                    "publish-date": "2022-03-18T00:01:09Z",
+                    "references": [
+                        "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+                        "https://nvd.nist.gov/vuln/detail/CVE-2021-44906"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.4"
+                        },
+                        {
+                            "minimist": "1.2.6"
+                        }
+                    ],
+                    "sca-kind": "reachable",
+                    "sca-legacy-identifier": "minimist-prototype-pollution",
+                    "sca-schema": 20230302,
+                    "sca-severity": "CRITICAL",
+                    "sca-vuln-database-identifier": "CVE-2021-44906",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f393d233-855d-49c5-a1c5-7a742519601a&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ],
+                    "vulnerability-name": "Prototype Pollution in minimist",
+                    "vulnerable-versions": "< 1.2.6"
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": "< 0.2.4"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 223,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": true,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "ERROR"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 223,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-f393d233-855d-49c5-a1c5-7a742519601a",
+            "end": {
+                "col": 0,
+                "line": 759,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4e99b42a8a7d780e33ea209624fd9f68cdd0ce0a05303aad45acf59c5da7e33afb5bea66dc3f461f2b7dac337f7bc36a097a85ee39cc5438c083095d3bd6fe35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/flatiron/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "Minimist <=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).\n",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "namespace": "npm",
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "package-name": "minimist",
+                    "patch-diff": "https://github.com/substack/minimist/pull/165/files",
+                    "publish-date": "2022-03-18T00:01:09Z",
+                    "references": [
+                        "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+                        "https://nvd.nist.gov/vuln/detail/CVE-2021-44906"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.4"
+                        },
+                        {
+                            "minimist": "1.2.6"
+                        }
+                    ],
+                    "sca-kind": "reachable",
+                    "sca-legacy-identifier": "minimist-prototype-pollution",
+                    "sca-schema": 20230302,
+                    "sca-severity": "CRITICAL",
+                    "sca-vuln-database-identifier": "CVE-2021-44906",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f393d233-855d-49c5-a1c5-7a742519601a&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ],
+                    "vulnerability-name": "Prototype Pollution in minimist",
+                    "vulnerable-versions": "< 1.2.6"
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": "< 0.2.4"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 758,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": true,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "ERROR"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 758,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-f393d233-855d-49c5-a1c5-7a742519601a",
+            "end": {
+                "col": 0,
+                "line": 1539,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4e99b42a8a7d780e33ea209624fd9f68cdd0ce0a05303aad45acf59c5da7e33afb5bea66dc3f461f2b7dac337f7bc36a097a85ee39cc5438c083095d3bd6fe35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/optimist/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "Minimist <=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).\n",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "namespace": "npm",
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "package-name": "minimist",
+                    "patch-diff": "https://github.com/substack/minimist/pull/165/files",
+                    "publish-date": "2022-03-18T00:01:09Z",
+                    "references": [
+                        "https://github.com/advisories/GHSA-xvch-5gv4-984h",
+                        "https://nvd.nist.gov/vuln/detail/CVE-2021-44906"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.4"
+                        },
+                        {
+                            "minimist": "1.2.6"
+                        }
+                    ],
+                    "sca-kind": "reachable",
+                    "sca-legacy-identifier": "minimist-prototype-pollution",
+                    "sca-schema": 20230302,
+                    "sca-severity": "CRITICAL",
+                    "sca-vuln-database-identifier": "CVE-2021-44906",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-f393d233-855d-49c5-a1c5-7a742519601a&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ],
+                    "vulnerability-name": "Prototype Pollution in minimist",
+                    "vulnerable-versions": "< 1.2.6"
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": "< 0.2.4"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 1538,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": true,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "ERROR"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 1538,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-parity-09b88a2ac33a3cb1800e2334c070c6246a7a3d29",
+            "end": {
+                "col": 0,
+                "line": 229,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "a99f39b3b2ad5ac2f86963b8127d8a77fa41f1cbc09d8a34ce69f228f57cc67a395d9f941f18bc00b990395d9730e357ce2ec72cceec7a36c13535fb80e32664_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/broadway/node_modules/nconf\": {\n      \"version\": \"0.6.9\",",
+                "message": "nconf < 0.11.4 is vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1357: Reliance on Uncontrolled Component",
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "publish-date": "2022-04-13T00:00:30Z",
+                    "references": [
+                        "https://nvd.nist.gov/vuln/detail/CVE-2022-21803",
+                        "https://github.com/advisories/GHSA-6xwr-q98w-rvg7"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "nconf": "0.11.4"
+                        }
+                    ],
+                    "sca-kind": "legacy",
+                    "sca-schema": 20230302,
+                    "sca-severity": "HIGH",
+                    "sca-vuln-database-identifier": "CVE-2022-21803",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-09b88a2ac33a3cb1800e2334c070c6246a7a3d29&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "nconf",
+                            "semver_range": ">=0, <0.11.4"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "3078981c87368a042ca08d6fd08715138315695ffec8842d76e3b051c40da0b77ea4f82829b95629b814de2b64842d1acf9c3654c750950b803bea22e2ac6d26"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 228,
+                            "package": "nconf",
+                            "resolved_url": "https://registry.npmjs.org/nconf/-/nconf-0.6.9.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.6.9"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": false,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "WARNING"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 228,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-parity-09b88a2ac33a3cb1800e2334c070c6246a7a3d29",
+            "end": {
+                "col": 0,
+                "line": 1375,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "a99f39b3b2ad5ac2f86963b8127d8a77fa41f1cbc09d8a34ce69f228f57cc67a395d9f941f18bc00b990395d9730e357ce2ec72cceec7a36c13535fb80e32664_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/nconf\": {\n      \"version\": \"0.10.0\",",
+                "message": "nconf < 0.11.4 is vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1357: Reliance on Uncontrolled Component",
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "publish-date": "2022-04-13T00:00:30Z",
+                    "references": [
+                        "https://nvd.nist.gov/vuln/detail/CVE-2022-21803",
+                        "https://github.com/advisories/GHSA-6xwr-q98w-rvg7"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "nconf": "0.11.4"
+                        }
+                    ],
+                    "sca-kind": "legacy",
+                    "sca-schema": 20230302,
+                    "sca-severity": "HIGH",
+                    "sca-vuln-database-identifier": "CVE-2022-21803",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-09b88a2ac33a3cb1800e2334c070c6246a7a3d29&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "nconf",
+                            "semver_range": ">=0, <0.11.4"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "7ca897310ae93fb0985894332a43cfc7d84f826abe60b0f2c5c1bd37c469884f45a029026f30f43725b4621137c67dc0ba97bb9e70de231e0f17361e8691d3f5"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 1374,
+                            "package": "nconf",
+                            "resolved_url": "https://registry.npmjs.org/nconf/-/nconf-0.10.0.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.10.0"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": false,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "WARNING"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 1374,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0",
+            "end": {
+                "col": 0,
+                "line": 224,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "ee959bebf40a5b44b29b6118624de9dc59862d7554fa266198300897d1d986a4338baf147e513b42a9e6a983fc2171fcd95e445352378c8b21240005c1b3ed35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/broadway/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "minimist < 0.2.1,< 1.2.3 are vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1357: Reliance on Uncontrolled Component",
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "publish-date": "2020-04-03T21:48:32Z",
+                    "references": [
+                        "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+                        "https://github.com/advisories/GHSA-vh95-rmgr-6w4m"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.1"
+                        },
+                        {
+                            "minimist": "1.2.3"
+                        }
+                    ],
+                    "sca-kind": "legacy",
+                    "sca-schema": 20230302,
+                    "sca-severity": "MODERATE",
+                    "sca-vuln-database-identifier": "CVE-2020-7598",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": ">=0, <0.2.1"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 223,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": false,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "WARNING"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 223,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0",
+            "end": {
+                "col": 0,
+                "line": 759,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "ee959bebf40a5b44b29b6118624de9dc59862d7554fa266198300897d1d986a4338baf147e513b42a9e6a983fc2171fcd95e445352378c8b21240005c1b3ed35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/flatiron/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "minimist < 0.2.1,< 1.2.3 are vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1357: Reliance on Uncontrolled Component",
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "publish-date": "2020-04-03T21:48:32Z",
+                    "references": [
+                        "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+                        "https://github.com/advisories/GHSA-vh95-rmgr-6w4m"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.1"
+                        },
+                        {
+                            "minimist": "1.2.3"
+                        }
+                    ],
+                    "sca-kind": "legacy",
+                    "sca-schema": 20230302,
+                    "sca-severity": "MODERATE",
+                    "sca-vuln-database-identifier": "CVE-2020-7598",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": ">=0, <0.2.1"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 758,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": false,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "WARNING"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 758,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0",
+            "end": {
+                "col": 0,
+                "line": 1539,
+                "offset": 0
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "ee959bebf40a5b44b29b6118624de9dc59862d7554fa266198300897d1d986a4338baf147e513b42a9e6a983fc2171fcd95e445352378c8b21240005c1b3ed35_0",
+                "is_ignored": false,
+                "lines": "    \"node_modules/optimist/node_modules/minimist\": {\n      \"version\": \"0.0.10\",",
+                "message": "minimist < 0.2.1,< 1.2.3 are vulnerable to Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution').",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1357: Reliance on Uncontrolled Component",
+                        "CWE-1321: Improperly Controlled Modification of Object Prototype Attributes ('Prototype Pollution')"
+                    ],
+                    "dev.semgrep.actions": [],
+                    "owasp": [
+                        "A06:2021 - Vulnerable and Outdated Components"
+                    ],
+                    "publish-date": "2020-04-03T21:48:32Z",
+                    "references": [
+                        "https://nvd.nist.gov/vuln/detail/CVE-2020-7598",
+                        "https://github.com/advisories/GHSA-vh95-rmgr-6w4m"
+                    ],
+                    "sca-fix-versions": [
+                        {
+                            "minimist": "0.2.1"
+                        },
+                        {
+                            "minimist": "1.2.3"
+                        }
+                    ],
+                    "sca-kind": "legacy",
+                    "sca-schema": 20230302,
+                    "sca-severity": "MODERATE",
+                    "sca-vuln-database-identifier": "CVE-2020-7598",
+                    "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-parity-948cfc73294d7d91efe7b77fa8d8632be05183f0&reachability+analysis=1-2-3-4",
+                    "technology": [
+                        "js",
+                        "ts"
+                    ]
+                },
+                "metavars": {},
+                "sca_info": {
+                    "dependency_match": {
+                        "dependency_pattern": {
+                            "ecosystem": "npm",
+                            "package": "minimist",
+                            "semver_range": ">=0, <0.2.1"
+                        },
+                        "found_dependency": {
+                            "allowed_hashes": {
+                                "sha512": [
+                                    "8a8b644efc5cf93c0e9b921e8a6f159d236f0838c22bd4bc1b7b1c279d19b61b294b16bb8f1e748e485876eb80b408ef7c35304a03b07fcf887fdf4094e121cb"
+                                ]
+                            },
+                            "ecosystem": "npm",
+                            "line_number": 1538,
+                            "package": "minimist",
+                            "resolved_url": "https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz",
+                            "transitivity": "transitive",
+                            "version": "0.0.10"
+                        },
+                        "lockfile": "package-lock.json"
+                    },
+                    "reachability_rule": false,
+                    "reachable": false,
+                    "sca_finding_schema": 20220913
+                },
+                "severity": "WARNING"
+            },
+            "path": "package-lock.json",
+            "start": {
+                "col": 0,
+                "line": 1538,
+                "offset": 0
+            }
+        }
+    ],
+    "version": "1.32.0"
+}
