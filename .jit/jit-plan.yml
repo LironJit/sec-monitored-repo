@@ -37,7 +37,7 @@ override:
           enabled: false
         static-code-analysis-scala:
           enabled: false
-        static-code-analysis-snyk:
+        static-code-analysis-semgrep-pro:
           enabled: true
         static-code-analysis-swift:
           enabled: false
@@ -49,5 +49,5 @@ override:
           enabled: false
         software-component-analysis-js:
           enabled: false
-        software-component-analysis-snyk:
+        software-component-analysis-semgrep-pro:
           enabled: true
