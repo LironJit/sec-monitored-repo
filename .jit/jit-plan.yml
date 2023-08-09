@@ -1,6 +1,6 @@
 name: My plan
 level: beginner
-update_id: 9c2acf4e-8f90-4ddd-a21d-f3f0f38edd66
+update_id: db851fe2-e414-4b04-a365-ae772c6dca13
 author: Jit
 version: 0.1
 owners:
@@ -17,16 +17,6 @@ items:
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
-    sca:
-      jobs:
-        software-component-analysis:
-          enabled: false
-        software-component-analysis-go:
-          enabled: false
-        software-component-analysis-js:
-          enabled: false
-        software-component-analysis-snyk:
-          enabled: true
     sast:
       jobs:
         static-code-analysis-csharp:
@@ -47,7 +37,17 @@ override:
           enabled: false
         static-code-analysis-scala:
           enabled: false
+        static-code-analysis-snyk:
+          enabled: true
         static-code-analysis-swift:
           enabled: false
-        static-code-analysis-snyk:
+    sca:
+      jobs:
+        software-component-analysis:
+          enabled: false
+        software-component-analysis-go:
+          enabled: false
+        software-component-analysis-js:
+          enabled: false
+        software-component-analysis-snyk:
           enabled: true
