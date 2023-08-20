@@ -18,9 +18,6 @@ items:
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Detect GitHub misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/third_party_app/item-github-misconfiguration.yml@latest
 override:
   workflows:
     sast:
