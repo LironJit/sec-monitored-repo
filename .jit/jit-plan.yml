@@ -21,13 +21,37 @@ items:
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
-    iac-misconfiguration-detection:
+    sca:
       jobs:
-        iac-misconfig-detection-terraform:
-          steps:
-          - name: Run KICS (terraform)
-            uses: registry.jit.io/control-kics-alpine:latest
-            with:
-              args: scan -t Terraform -p ${WORK_DIR:-.} -o /code/jit-report/results.json
-                -f json --config /terraform-config.yaml --disable-secrets --exclude-queries
-                6726dcc0-5ff5-459d-b473-a780bef7665c,4495bc5d-4d1e-4a26-ae92-152d18195648,42bb6b7f-6d54-4428-b707-666f669d94fb,90501b1b-cded-4cc1-9e8b-206b85cda317,3a1e94df-6847-4c0e-a3b6-6c6af4e128ef,c5b31ab9-0f26-4a49-b8aa-4cc064392f4d
+        software-component-analysis:
+          enabled: false
+        software-component-analysis-go:
+          enabled: false
+        software-component-analysis-js:
+          enabled: false
+        software-component-analysis-semgrep-pro:
+          enabled: true
+    sast:
+      jobs:
+        static-code-analysis-csharp:
+          enabled: false
+        static-code-analysis-go:
+          enabled: false
+        static-code-analysis-java:
+          enabled: false
+        static-code-analysis-js:
+          enabled: false
+        static-code-analysis-kotlin:
+          enabled: false
+        static-code-analysis-python:
+          enabled: false
+        static-code-analysis-python-semgrep:
+          enabled: false
+        static-code-analysis-rust:
+          enabled: false
+        static-code-analysis-scala:
+          enabled: false
+        static-code-analysis-semgrep-pro:
+          enabled: true
+        static-code-analysis-swift:
+          enabled: false
