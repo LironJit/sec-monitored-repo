@@ -73,7 +73,7 @@ jobs:
     - name: trufflehog
       uses: jitsecurity-controls/jit-github-action@v4.0.1
       with:
-        security_control: registry.jit.io/control-trufflehog-alpine:latest
+        security_control: registry.jit.io/control-trufflehog-alpine:not-hardened-sc-20397-add-fingerprint-testing-for-every-control-slim-instrumented
         
   software-component-analysis-go:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-go' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sca'
