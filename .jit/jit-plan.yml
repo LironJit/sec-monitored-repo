@@ -1,5 +1,6 @@
 name: My plan
 level: beginner
+update_id: 033dc023-75ee-43a9-a237-ef7f3ef2553f
 author: Jit
 version: 0.1
 owners:
@@ -9,19 +10,15 @@ references:
 tags: []
 items:
   - name: Verify that Github Branch Protection is properly configured
-    uses: >-
-      jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your Dockerfiles for vulnerabilities
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
   - name: Scan your code dependencies for vulnerabilities (SCA)
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
