@@ -135,98 +135,98 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-go:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-go' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: gosec
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-gosec-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-java:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-java' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-js:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-js' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-kotlin:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-kotlin' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-php:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-php' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-python-semgrep:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-python-semgrep' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-rust:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-rust' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-scala:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-scala' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
   static-code-analysis-swift:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-swift' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: semgrep
+    - name: semgrep-alpine:not-hardened-upgrade-to-1-46
       uses: jitsecurity-controls/jit-github-action@v4.0.3
       with:
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:not-hardened-upgrade-to-1-46-0
         
