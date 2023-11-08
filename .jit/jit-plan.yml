@@ -32,4 +32,4 @@ override:
           - name: Run semgrep javascript and typescript
             uses: registry.jit.io/control-semgrep-alpine:latest
             with:
-              args: --json --config=/semgrep-ts-config.yml --metrics=off ${WORK_DIR:-.}
+              args: --json --config=/semgrep-ts-config.yml --metrics=off ${WORK_DIR:-.} 
