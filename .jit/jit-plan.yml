@@ -24,9 +24,6 @@ items:
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Set desired branch protection configuration
-    uses: >-
-      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-set-config.yml@latest
 override:
   workflows:
     sast:
