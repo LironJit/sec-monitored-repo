@@ -1,6 +1,5 @@
 name: My plan
 level: beginner
-update_id: dc5fd282-35dd-41e7-bcb4-618024bbcbcb
 author: Jit
 version: 0.1
 owners:
@@ -10,29 +9,36 @@ references:
 tags: []
 items:
   - name: Verify that Github Branch Protection is properly configured
-    uses: jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
-    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your Dockerfiles for vulnerabilities
-    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
   - name: Scan your code dependencies for vulnerabilities (SCA)
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-
+  - name: Set desired branch protection configuration
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-set-config.yml@latest
 override:
   workflows:
     sast:
       jobs:
         static-code-analysis-js:
-          default: false
           steps:
-          - name: Run semgrep javascript and typescript
-            uses: registry.jit.io/control-semgrep-alpine:latest
-            with:
-              args: --json --config=/semgrep-ts-config.yml --metrics=off ${WORK_DIR:-.} 
+            - name: Run semgrep javascript and typescript
+              uses: registry.jit.io/control-semgrep-alpine:latest
+              with:
+                args: >-
+                  --json --config=/semgrep-ts-config.yml --metrics=off
+                  ${WORK_DIR:-.}
     secret-detection:
       jobs:
         secret-detection:
@@ -40,5 +46,8 @@ override:
             - name: Run Gitleaks
               uses: registry.jit.io/control-gitleaks-alpine:latest
               with:
-                args: detect --config /.jit/gitleaks.toml --source ${WORK_DIR:-.} -v --report-format json --report-path $REPORT_FILE --redact --no-git --exit-code 0
+                args: >-
+                  detect --config /.jit/gitleaks.toml --source ${WORK_DIR:-.} -v
+                  --report-format json --report-path $REPORT_FILE --redact
+                  --no-git --exit-code 0
                 output_file: /tmp/report.json
