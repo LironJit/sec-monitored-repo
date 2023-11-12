@@ -33,3 +33,12 @@ override:
             uses: registry.jit.io/control-semgrep-alpine:latest
             with:
               args: --json --config=/semgrep-ts-config.yml --metrics=off ${WORK_DIR:-.} 
+    secret-detection:
+      jobs:
+        secret-detection:
+          steps:
+            - name: Run Gitleaks
+              uses: registry.jit.io/control-gitleaks-alpine:latest
+              with:
+                args: detect --config /.jit/gitleaks.toml --source ${WORK_DIR:-.} -v --report-format json --report-path $REPORT_FILE --redact --no-git --exit-code 0
+                output_file: /tmp/report.json
