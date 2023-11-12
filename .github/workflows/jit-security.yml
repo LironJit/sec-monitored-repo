@@ -159,7 +159,16 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v4.0.5
       with:
         security_control: registry.jit.io/control-semgrep-alpine:latest
-      
+        
+  static-code-analysis-js:
+    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-js' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
+    runs-on: ubuntu-20.04
+    timeout-minutes: 20
+    steps:
+    - name: semgrep
+      uses: jitsecurity-controls/jit-github-action@v4.0.5
+      with:
+        security_control: registry.jit.io/control-semgrep-alpine:latest
         
   static-code-analysis-kotlin:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-kotlin' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
