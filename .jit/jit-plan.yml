@@ -25,6 +25,9 @@ items:
   - name: Limit number of organization admins
     uses: >-
       jitsecurity-controls/jit-plans/items/access_management/item-access-management-max-admins.yml@latest
+  - name: Limit user permissions to follow least privilege principle
+    uses: >-
+      jitsecurity-controls/jit-plans/items/access_management/item-access-management-least-privilege.yml@latest
 override:
   workflows:
     sast:
