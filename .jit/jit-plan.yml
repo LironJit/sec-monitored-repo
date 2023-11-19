@@ -32,11 +32,10 @@ override:
         static-code-analysis-js:
           steps:
             - name: Run semgrep javascript and typescript
-              uses: registry.jit.io/control-semgrep-alpine:latest
+              uses: registry.jit.io/control-semgrep-alpine:not-hardened-balance-debug
               with:
                 args: >-
-                  --json --config=/semgrep-ts-config.yml --metrics=off
-                  ${WORK_DIR:-.}
+                  ci --pro --json
     secret-detection:
       jobs:
         secret-detection:
