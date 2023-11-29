@@ -28,6 +28,8 @@ override:
     secret-detection:
       jobs:
         secret-detection:
-          enabled: false
-        trufflehog-secret-detection:
-          enabled: true
+          steps:
+            - name: Run Gitleaks
+              uses: >-
+                registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
+
