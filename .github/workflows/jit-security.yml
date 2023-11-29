@@ -81,10 +81,10 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
-    - name: gitleaks-alpine:sc-21325-control-gitleaks-non-informative
+    - name: gitleaks
       uses: jitsecurity-controls/jit-github-action@v4.0.5
       with:
-        security_control: registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
+        security_control: registry.jit.io/control-gitleaks-alpine:latest
         security_control_output_file: /tmp/report.json
         
   static-code-analysis-csharp:
