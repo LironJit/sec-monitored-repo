@@ -34,3 +34,10 @@ override:
             - name: Run Gitleaks
               uses: >-
                 registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
+    sbom:
+      jobs:
+        software-bill-of-materials:
+          steps:
+            - name: Run syft
+              uses: >-
+                registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
