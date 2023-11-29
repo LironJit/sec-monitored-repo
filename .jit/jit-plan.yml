@@ -2,7 +2,10 @@ owners:
   default: null
 name: My plan
 author: Jit
-items: []
+items:
+  - name: Protect code changes by properly setting branch protection
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-protect-code-changes.yml@latest
 level: beginner
 version: 0.1
 references:
