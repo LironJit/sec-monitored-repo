@@ -22,18 +22,8 @@ items:
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Generate a Software Bill of Materials (SBOM)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
 override:
   workflows:
-    secret-detection:
-      jobs:
-        secret-detection:
-          steps:
-            - name: Run Gitleaks
-              uses: >-
-                registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
     sbom:
       jobs:
         software-bill-of-materials:
@@ -41,3 +31,10 @@ override:
             - name: Run syft
               uses: >-
                 registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
+    secret-detection:
+      jobs:
+        secret-detection:
+          steps:
+            - name: Run Gitleaks
+              uses: >-
+                registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
