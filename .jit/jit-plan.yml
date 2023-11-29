@@ -22,41 +22,22 @@ items:
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Protect code changes by properly setting branch protection
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-protect-code-changes.yml@latest
 override:
   workflows:
-    # sbom:
-    #   jobs:
-    #     software-bill-of-materials:
-    #       steps:
-    #         - name: Run syft
-    #           uses: >-
-    #             registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
-    # secret-detection:
-    #   jobs:
-    #     secret-detection:
-    #       steps:
-    #         - name: Run Gitleaks
-    #           uses: >-
-    #             registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
-    github-misconfiguration-branch-protect-code-changes:
+    sbom:
       jobs:
-        chainbench-branch-protect-code-changes:
-          enabled: false
-        legitify-branch-protect-code-changes:
-          enabled: true
+        software-bill-of-materials:
           steps:
-            - name: Run Legitify
-              uses: registry.jit.io/control-legitify-alpine:latest
-              with:
-                args: analyze --namespace repository --repo ${{ context.asset.owner }}/${{ context.asset.asset_name }} -o /results.json -f json
-                env:
-                  SCM_TOKEN: ${{ jit_secrets.GITHUB_PAT }}
-                  SECURITY_CONTROL_OUTPUT_FILE: /results.json
-                  TEST_IDS: '[
-                    "data.repository.missing_default_branch_protection",
-                    "data.repository.pushes_are_not_restricted",
-                    "data.repository.requires_status_checks",
-                    "data.repository.missing_default_branch_protection_force_push",
-                    "data.repository.dismisses_stale_reviews",
-                    "data.repository.requires_branches_up_to_date_before_merge"
-                    ]'
+            - name: Run syft
+              uses: >-
+                registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
+    secret-detection:
+      jobs:
+        secret-detection:
+          steps:
+            - name: Run Gitleaks
+              uses: >-
+                registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
