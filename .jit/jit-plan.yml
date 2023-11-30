@@ -1,30 +1,19 @@
-name: My plan
-level: beginner
-author: Jit
-version: 0.1
 owners:
   default: null
+name: My plan
+author: Jit
+items:
+  - name: Protect code changes by properly setting branch protection
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-protect-code-changes.yml@latest
+level: beginner
+version: 0.1
 references:
   - https://www.jit.io
 tags: []
-items:
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Generate a Software Bill of Materials (SBOM)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+
 override:
   workflows:
-    secret-detection:
-      jobs:
-        secret-detection:
-          steps:
-            - name: Run Gitleaks
-              uses: >-
-                registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
     github-misconfiguration-branch-protect-code-changes:
       jobs:
         chainbench-branch-protect-code-changes:
@@ -45,3 +34,9 @@ override:
                   "data.repository.missing_default_branch_protection_force_push",
                   "data.repository.dismisses_stale_reviews", "data.repository.requires_branches_up_to_date_before_merge"
                   ]'
+    secret-detection:
+      jobs:
+        secret-detection:
+          steps:
+          - name: Run Gitleaks
+            uses: registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
