@@ -6,6 +6,9 @@ items:
   - name: Protect code changes by properly setting branch protection
     uses: >-
       jitsecurity-controls/jit-plans/items/branch_protection/item-branch-protect-code-changes.yml@latest
+  - name: Limit creation of public repos
+    uses: >-
+      jitsecurity-controls/jit-plans/items/external_exposure/item-external-exposure-limit-creation-repo.yml@latest
 level: beginner
 version: 0.1
 references:
