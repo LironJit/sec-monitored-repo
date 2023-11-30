@@ -8,20 +8,16 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Generate a Software Bill of Materials (SBOM)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
 override:
   workflows:
-    # sbom:
-    #   jobs:
-    #     software-bill-of-materials:
-    #       steps:
-    #         - name: Run syft
-    #           uses: >-
-    #             registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
     secret-detection:
       jobs:
         secret-detection:
