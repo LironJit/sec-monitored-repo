@@ -15,13 +15,13 @@ items:
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
 override:
   workflows:
-    sbom:
-      jobs:
-        software-bill-of-materials:
-          steps:
-            - name: Run syft
-              uses: >-
-                registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
+    # sbom:
+    #   jobs:
+    #     software-bill-of-materials:
+    #       steps:
+    #         - name: Run syft
+    #           uses: >-
+    #             registry.jit.io/control-syft-alpine:not-hardened-intentionally-fail-control
     secret-detection:
       jobs:
         secret-detection:
