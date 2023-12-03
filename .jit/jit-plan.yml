@@ -40,9 +40,3 @@ override:
                   "data.repository.missing_default_branch_protection_force_push",
                   "data.repository.dismisses_stale_reviews", "data.repository.requires_branches_up_to_date_before_merge"
                   ]'
-    secret-detection:
-      jobs:
-        secret-detection:
-          steps:
-          - name: Run Gitleaks
-            uses: registry.jit.io/control-gitleaks-alpine:sc-21325-control-gitleaks-non-informative-descriptions
