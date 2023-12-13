@@ -1,15 +1,11 @@
-owners: 
+owners:
   default: null
 name: My plan
 author: Jit
 items:
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Scan your code dependencies for vulnerabilities (SCA)
-    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
-  - name: Scan your code for vulnerabilities (SAST)
+  - name: Detect GitHub misconfigurations
     uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+      jitsecurity-controls/jit-plans/items/third_party_app/item-github-misconfiguration.yml@latest
 level: beginner
 version: 0.1
 references:
