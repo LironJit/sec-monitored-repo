@@ -2,10 +2,7 @@ owners:
   default: null
 name: My plan
 author: Jit
-items:
-  - name: Detect GitHub misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/third_party_app/item-github-misconfiguration.yml@latest
+items: []
 level: beginner
 version: 0.1
 references:
