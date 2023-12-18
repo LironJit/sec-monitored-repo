@@ -11,26 +11,3 @@ version: 0.1
 references:
   - https://www.jit.io
 tags: []
-
-override:
-  workflows:
-    github-misconfiguration-branch-protect-code-changes:
-      jobs:
-        chainbench-branch-protect-code-changes:
-          enabled: false
-        legitify-branch-protect-code-changes:
-          enabled: true
-          steps:
-          - name: Run Legitify
-            uses: registry.jit.io/control-legitify-alpine:latest
-            with:
-              args: analyze --namespace repository --repo ${{ context.asset.owner
-                }}/${{ context.asset.asset_name }} -o /results.json -f json
-              env:
-                SCM_TOKEN: ${{ jit_secrets.GITHUB_PAT }}
-                SECURITY_CONTROL_OUTPUT_FILE: /results.json
-                TEST_IDS: '[ "data.repository.missing_default_branch_protection",
-                  "data.repository.pushes_are_not_restricted", "data.repository.requires_status_checks",
-                  "data.repository.missing_default_branch_protection_force_push",
-                  "data.repository.dismisses_stale_reviews", "data.repository.requires_branches_up_to_date_before_merge"
-                  ]'
