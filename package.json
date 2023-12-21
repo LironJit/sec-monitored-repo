@@ -1,0 +1,9 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
+    "myfakedenpmdep": "^1.2.3"
+  }
+}
