@@ -15,16 +15,3 @@ items:
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Generate a Software Bill of Materials (SBOM)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
-      
-override:
-  workflows:
-    sbom:
-      jobs:
-        software-bill-of-materials:
-          steps:
-            - name: Run syft
-              uses: >-
-                registry.jit.io/control-syft-alpine:not-hardened-sc-22106-syft-control-post-processing-sbom-report
