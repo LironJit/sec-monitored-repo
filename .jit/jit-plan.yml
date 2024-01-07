@@ -1,6 +1,5 @@
 name: My plan
 level: beginner
-update_id: f522509a-526d-4f9c-a5ca-83768e7d3b70
 author: Jit
 version: 0.1
 owners:
@@ -10,10 +9,11 @@ references:
 tags: []
 items:
   - name: Set desired branch protection configuration
-    uses: jitsecurity-controls/jit-plans/items/branch_protection/item-branch-set-config.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-set-config.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
-    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Generate a Software Bill of Materials (SBOM)
-    uses: jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+
