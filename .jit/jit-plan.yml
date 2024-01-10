@@ -15,3 +15,35 @@ items:
     uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+override:
+  workflows:
+    github-misconfiguration-access-management-mfa:
+      jobs:
+        chainbench-access-management-mfa:
+          steps:
+          - name: Run chain-bench
+            uses: registry.jit.io/control-chain-bench-alpine:sc-22677-chain-bench-control-handle-registry-is-not
+            with:
+              args: scan -t ${{ jit_secrets.GITHUB_PAT }} -r https://github.com/${{
+                context.asset.asset_name }}/${{ context.installation.centralized_repo_asset.asset_name
+                }} -o /opt/results.json
+              env:
+                MODE: org
+                SECURITY_CONTROL_OUTPUT_FILE: /opt/results.json
+                TEST_IDS: '[ "4.2.3" ]'
+
+
+    github-misconfiguration-access-management-least-privilege:
+      jobs:
+        chainbench-access-management-least-privilege:
+          steps:
+          - name: Run chain-bench
+            uses: registry.jit.io/control-chain-bench-alpine:sc-22677-chain-bench-control-handle-registry-is-not
+            with:
+              args: scan -t ${{ jit_secrets.GITHUB_PAT }} -r https://github.com/${{
+                context.asset.asset_name }}/${{ context.installation.centralized_repo_asset.asset_name
+                }} -o /opt/results.json
+              env:
+                MODE: org
+                SECURITY_CONTROL_OUTPUT_FILE: /opt/results.json
+                TEST_IDS: '[ "4.2.5" ]'
