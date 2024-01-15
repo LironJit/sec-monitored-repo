@@ -2,7 +2,10 @@ owners:
   default: null
 name: My plan
 author: Jit
-items: []
+items:
+  - name: Generate a Software Bill of Materials (SBOM)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
 level: beginner
 version: 0.1
 references:
