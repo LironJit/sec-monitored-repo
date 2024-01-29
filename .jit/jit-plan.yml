@@ -3,9 +3,9 @@ owners:
 name: My plan
 author: Jit
 items:
-  - name: Scan your Dockerfiles for vulnerabilities
+  - name: Scan Kubernetes configuration files
     uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
 level: beginner
 version: 0.1
 references:
