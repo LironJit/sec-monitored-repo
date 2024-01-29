@@ -12,16 +12,6 @@ permissions:
   id-token: write
 
 jobs:
-  docker-scan:
-    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'docker-scan' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-docker-scan'
-    runs-on: ubuntu-20.04
-    timeout-minutes: 60
-    steps:
-    - name: trivy
-      uses: jitsecurity-controls/jit-github-action@v4.0.6
-      with:
-        security_control: registry.jit.io/control-trivy-alpine:latest
-        
   enrich:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'enrich' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-enrichment-code'
     runs-on: ubuntu-20.04
@@ -31,6 +21,17 @@ jobs:
       uses: jitsecurity-controls/jit-github-action@v4.0.6
       with:
         security_control: registry.jit.io/control-enrichment-slim:latest
+        
+  iac-misconfig-detection-kubernetes:
+    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'iac-misconfig-detection-kubernetes' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-kubernetes-iac-misconfiguration-detection'
+    runs-on: ubuntu-20.04
+    timeout-minutes: 60
+    steps:
+    - name: kubescape
+      uses: jitsecurity-controls/jit-github-action@v4.0.6
+      with:
+        security_control: registry.jit.io/control-kubescape-slim:latest
+        security_control_output_file: /code/results.json
         
   remediation-pr:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'remediation-pr' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-remediation-pr'
