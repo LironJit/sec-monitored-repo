@@ -30,6 +30,6 @@ jobs:
     - name: gitleaks
       uses: jitsecurity-controls/jit-github-action@v4.0.6
       with:
-        security_control: registry.jit.io/control-gitleaks-alpine:latest
+        security_control: registry.jit.io/control-gitleaks-alpine:sc-23191-gitleaks-perion-adjust-generic-api-key-rule
         security_control_output_file: /tmp/report.json
         
