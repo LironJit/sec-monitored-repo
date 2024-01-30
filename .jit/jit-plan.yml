@@ -3,8 +3,8 @@ owners:
 name: My plan
 author: Jit
 items:
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Scan your code dependencies for vulnerabilities (SCA)
+    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
 level: beginner
 version: 0.1
 references:
@@ -48,5 +48,7 @@ override:
           - name: Run Gitleaks
             uses: registry.jit.io/control-gitleaks-alpine:not-hardened-sc-23191-gitleaks-perion-adjust-generic-api-key-rule
             with:
-              args: detect --config /config/gitleaks.toml --source ${WORK_DIR:-.} -v --report-format json --report-path $REPORT_FILE --redact --no-git --exit-code 0
+              args: detect --config /config/gitleaks.toml --source ${WORK_DIR:-.}
+                -v --report-format json --report-path $REPORT_FILE --redact --no-git
+                --exit-code 0
               output_file: /tmp/report.json
