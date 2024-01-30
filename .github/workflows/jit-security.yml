@@ -18,9 +18,9 @@ jobs:
     timeout-minutes: 60
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v4.0.6
+      uses: jitsecurity-controls/jit-github-action@ssh-test
       with:
-        security_control: registry.jit.io/control-enrichment-slim:latest
+        security_control: registry.jit.io/control-enrichment-slim:main
         
   secret-detection:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-secret-detection'
@@ -28,8 +28,8 @@ jobs:
     timeout-minutes: 60
     steps:
     - name: gitleaks-alpine:not-hardened-sc-23191-gitleaks-perion-adjust-generic-api-key
-      uses: jitsecurity-controls/jit-github-action@v4.0.6
+      uses: jitsecurity-controls/jit-github-action@ssh-test
       with:
-        security_control: registry.jit.io/control-gitleaks-alpine:not-hardened-sc-23191-gitleaks-perion-adjust-generic-api-key-rule
+        security_control: registry.jit.io/control-gitleaks-alpine:main
         security_control_output_file: /tmp/report.json
         
