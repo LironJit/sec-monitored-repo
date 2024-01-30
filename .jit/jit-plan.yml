@@ -2,9 +2,7 @@ owners:
   default: null
 name: My plan
 author: Jit
-items:
-  - name: Scan your code dependencies for vulnerabilities (SCA)
-    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+items: []
 level: beginner
 version: 0.1
 references:
