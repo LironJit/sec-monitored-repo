@@ -2,10 +2,7 @@ owners:
   default: null
 name: My plan
 author: Jit
-items:
-  - name: Verify that Github Branch Protection is properly configured
-    uses: >-
-      jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
+items: []
 level: beginner
 version: 0.1
 references:
