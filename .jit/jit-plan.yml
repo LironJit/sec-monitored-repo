@@ -1,10 +1,13 @@
+name: My plan
+level: beginner
+author: Jit
+version: 0.1
 owners:
   default: null
-name: My plan
-author: Jit
-items: []
-level: beginner
-version: 0.1
 references:
   - https://www.jit.io
 tags: []
+items:
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+
