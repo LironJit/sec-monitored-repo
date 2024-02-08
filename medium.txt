@@ -1,0 +1,11 @@
+key      = "karpenter.k8s.aws/instance-family"
+
+
+key_name = "8291abe7fdsdv"
+
+
+"user_id": "AROAU6HVUUJJRY5LG42WF:terragrunt-1670346639410777609"
+
+
+"private": "bnVsbA==",
+ 
