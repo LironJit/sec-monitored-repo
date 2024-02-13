@@ -11,7 +11,7 @@ permissions:
   contents: read
   id-token: write
 
-jobs:
+jobs: 
   enrich:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'enrich' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-enrichment-code'
     runs-on: ubuntu-20.04
