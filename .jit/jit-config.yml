@@ -14,4 +14,4 @@ github_branch_protection:
     required_status_checks: []
 license-compliance:
   deny_list:
-    - *GPL*
+    - GPL
