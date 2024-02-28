@@ -1,6 +1,5 @@
 name: My plan
 level: beginner
-update_id: 73564d83-7c29-44b4-9ef6-97f2b5c2a546
 author: Jit
 version: 0.1
 owners:
@@ -12,4 +11,8 @@ items:
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Generate a Software Bill of Materials (SBOM)
-    uses: jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+  - name: Scan your code dependencies for vulnerabilities (SCA)
+    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+
