@@ -18,6 +18,9 @@ items:
   - name: Scan your Dockerfiles for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
 
 override:
   workflows:
@@ -25,8 +28,8 @@ override:
       jobs:
         docker-scan:
           steps:
-            - name: Run trivy
-              uses: registry.jit.io/control-trivy-alpine:sc-23751-trivy-control-additional-config-to-ignore
-              with:
-                args: >-
-                  --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore_ds029 ${WORK_DIR:-.}
+          - name: Run trivy
+            uses: registry.jit.io/control-trivy-alpine:sc-23751-trivy-control-additional-config-to-ignore
+            with:
+              args: --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore_ds029
+                ${WORK_DIR:-.}
