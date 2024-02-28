@@ -19,3 +19,14 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
 
+override:
+  workflows:
+    docker-scan:
+      jobs:
+        docker-scan:
+          steps:
+            - name: Run trivy
+              uses: registry.jit.io/control-trivy-alpine:latest
+              with:
+                args: >-
+                  --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore_ds029 ${WORK_DIR:-.}
