@@ -40,7 +40,7 @@ jobs:
     - name: kics
       uses: jitsecurity-controls/jit-github-action@v4.2.0
       with:
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:test-remediations
         security_control_output_file: /code/jit-report/results.json
         
   iac-misconfig-detection-pulumi:
@@ -51,7 +51,7 @@ jobs:
     - name: kics
       uses: jitsecurity-controls/jit-github-action@v4.2.0
       with:
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:test-remediations
         security_control_output_file: /code/jit-report/results.json
         
   iac-misconfig-detection-terraform:
@@ -62,7 +62,7 @@ jobs:
     - name: kics
       uses: jitsecurity-controls/jit-github-action@v4.2.0
       with:
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:test-remediations
         security_control_output_file: /code/jit-report/results.json
         
   remediation-pr:
