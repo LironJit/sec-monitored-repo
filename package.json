@@ -1,0 +1,9 @@
+{
+  "name": "@some/repo",
+  "version": "0.6.5",
+  "description": "some repo",
+  "main": "dist/lib/index.js",
+  "dependencies": {
+    "pac-resolver": "4.2.0"
+  }
+}
