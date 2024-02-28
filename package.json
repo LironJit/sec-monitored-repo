@@ -1,9 +1,9 @@
 {
-  "name": "example-project",
-  "version": "1.0.0",
+  "name": "@some/repo",
+  "version": "0.6.5",
+  "description": "some repo",
+  "main": "dist/lib/index.js",
   "dependencies": {
-    "axios": "^0.21.1",
-    "lodash": "^4.17.21",
-    "myfakedenpmdep": "^1.2.3"
+    "pac-resolver": "4.2.0"
   }
 }
