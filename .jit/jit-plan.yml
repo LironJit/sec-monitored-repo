@@ -26,7 +26,7 @@ override:
         docker-scan:
           steps:
             - name: Run trivy
-              uses: registry.jit.io/control-trivy-alpine:latest
+              uses: registry.jit.io/control-trivy-alpine:sc-23751-trivy-control-additional-config-to-ignore
               with:
                 args: >-
                   --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore_ds029 ${WORK_DIR:-.}
