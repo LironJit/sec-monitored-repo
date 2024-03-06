@@ -33,6 +33,9 @@ items:
   - name: Limit user permissions to follow the least privilege principle
     uses: >-
       jitsecurity-controls/jit-plans/items/access_management/item-access-management-least-privilege.yml@latest
+  - name: Protect code changes by properly setting branch protection
+    uses: >-
+      jitsecurity-controls/jit-plans/items/branch_protection/item-branch-protect-code-changes.yml@latest
 override:
   workflows:
     docker-scan:
