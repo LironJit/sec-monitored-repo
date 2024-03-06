@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 60
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@ssh-test
+      uses: jitsecurity-controls/jit-github-action@4.2.0
       with:
         security_control: registry.jit.io/control-enrichment-slim:main
         
@@ -27,8 +27,8 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 60
     steps:
-    - name: gitleaks-alpine:not-hardened-sc-23191-gitleaks-perion-adjust-generic-api-key
-      uses: jitsecurity-controls/jit-github-action@ssh-test
+    - name: gitleaks-alpine:main
+      uses: jitsecurity-controls/jit-github-action@4.2.0
       with:
         security_control: registry.jit.io/control-gitleaks-alpine:main
         security_control_output_file: /tmp/report.json
