@@ -1,52 +1,39 @@
+name: My plan
+level: beginner
+author: Jit
+version: 0.1
 owners:
   default: null
-name: My plan
-author: Jit
-items:
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-level: beginner
-version: 0.1
 references:
   - https://www.jit.io
 tags: []
-
+items:
+  - name: Scan your Dockerfiles for vulnerabilities
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+  - name: Scan your code dependencies for vulnerabilities (SCA)
+    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Generate a Software Bill of Materials (SBOM)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
+  - name: Limit the creation of public repos
+    uses: >-
+      jitsecurity-controls/jit-plans/items/external_exposure/item-external-exposure-limit-creation-repo.yml@latest
 override:
   workflows:
-    github-misconfiguration-access-management-least-privilege:
+    docker-scan:
       jobs:
-        chainbench-access-management-least-privilege:
+        docker-scan:
           steps:
-          - name: Run chain-bench
-            uses: registry.jit.io/control-chain-bench-alpine:sc-22677-chain-bench-control-handle-registry-is-not
-            with:
-              args: scan -t ${{ jit_secrets.GITHUB_PAT }} -r https://github.com/${{
-                context.asset.asset_name }}/${{ context.installation.centralized_repo_asset.asset_name
-                }} -o /opt/results.json
-              env:
-                MODE: org
-                SECURITY_CONTROL_OUTPUT_FILE: /opt/results.json
-                TEST_IDS: '[ "4.2.5" ]'
-    github-misconfiguration-access-management-mfa:
-      jobs:
-        chainbench-access-management-mfa:
-          steps:
-          - name: Run chain-bench
-            uses: registry.jit.io/control-chain-bench-alpine:sc-22677-chain-bench-control-handle-registry-is-not
-            with:
-              args: scan -t ${{ jit_secrets.GITHUB_PAT }} -r https://github.com/${{
-                context.asset.asset_name }}/${{ context.installation.centralized_repo_asset.asset_name
-                }} -o /opt/results.json
-              env:
-                MODE: org
-                SECURITY_CONTROL_OUTPUT_FILE: /opt/results.json
-                TEST_IDS: '[ "4.2.3" ]'
-    secret-detection:
-      jobs:
-        secret-detection:
-          steps:
-          - name: Run Gitleaks
-            uses: registry.jit.io/control-gitleaks-alpine:not-hardened-sc-23191-gitleaks-perion-adjust-generic-api-key-rule
-            with:
-              args: detect --config /config/gitleaks.toml --source ${WORK_DIR:-.} -v --report-format json --report-path $REPORT_FILE --redact --no-git --exit-code 0
-              output_file: /tmp/report.json
+            - name: Run trivy
+              uses: >-
+                registry.jit.io/control-trivy-alpine:sc-23751-trivy-control-additional-config-to-ignore
+              with:
+                args: >-
+                  --quiet config --severity HIGH,CRITICAL -f json --ignorefile
+                  /opt/.trivyignore_ds029 ${WORK_DIR:-.}
