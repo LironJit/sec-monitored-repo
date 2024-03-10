@@ -1,9 +1,16 @@
 {
-  "name": "example-project",
+  "name": "example-violating-project",
   "version": "1.0.0",
+  "description": "A project with dependencies that have licenses potentially violating certain compliance policies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "lodash": "^4.17.21",
-    "myfakedenpmdep": "^1.2.3"
+    "libav.js": "^4.10.6",
+    "lodash": "^4.17.15",
+    "axios": "^1.6.7"
   }
 }
