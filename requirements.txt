@@ -1,1 +1,1 @@
-pyqtwebengine==5.15.6
+gfagui==1.0.0
