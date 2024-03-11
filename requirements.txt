@@ -1,2 +1,2 @@
 x
-pyinstaller==6.5.0
+pyqt-tools==1.0.0
