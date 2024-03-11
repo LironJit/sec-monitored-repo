@@ -1,0 +1,4 @@
+pyqt5==5.9.0
+pyqt-tools==1.0.0
+pyinstaller==6.5.0
+pyqtwebengine==5.15.6
