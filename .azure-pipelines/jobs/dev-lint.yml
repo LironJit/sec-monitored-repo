@@ -5,5 +5,5 @@ steps:
     displayName: "Check dependencies"
   - script: yarn lint
     displayName: "Lint code"
-  - script: yarn lint-docs
+  - script: yarn lint-docs 
     displayName: "Lint docs"
