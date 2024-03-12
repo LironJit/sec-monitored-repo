@@ -30,7 +30,7 @@ jobs:
     - name: enrichment
       uses: jitsecurity-controls/jit-github-action@v4.2.1
       with:
-        security_control: registry.jit.io/control-enrichment-slim:latest
+        security_control: registry.jit.io/control-enrichment-slim:test-yamlcontent-parsing
         
   iac-misconfig-detection-cloudformation:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'iac-misconfig-detection-cloudformation' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-iac-misconfiguration-detection'
