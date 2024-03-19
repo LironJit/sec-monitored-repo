@@ -28,6 +28,9 @@ items:
   - name: Limit the creation of public repos
     uses: >-
       jitsecurity-controls/jit-plans/items/external_exposure/item-external-exposure-limit-creation-repo.yml@latest
+  - name: Scan Kubernetes configuration files
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
@@ -39,9 +42,9 @@ items:
   - name: Generate a Software Bill of Materials (SBOM)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
-  - name: Scan Kubernetes configuration files
+  - name: Scan your code for vulnerabilities (SAST)
     uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
+      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
 override:
   workflows:
     docker-scan:
