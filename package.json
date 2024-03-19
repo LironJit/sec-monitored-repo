@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "description": "Install serverless dependencies",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+      "express": "4.16.3",
+      "ssh2": "0.2.25",
+      "xmldom": "0.1.27"
+    }
+  }
+  
