@@ -55,3 +55,11 @@ override:
                 args: >-
                   --quiet config --severity HIGH,CRITICAL -f json --ignorefile
                   /opt/.trivyignore_ds029 ${WORK_DIR:-.}
+    kubernetes-iac-misconfiguration-detection:
+      jobs:
+        iac-misconfig-detection-kubernetes:
+          runner:
+            setup:
+              checkout: true
+              timeout_minutes: 1
+            type: github_actions
