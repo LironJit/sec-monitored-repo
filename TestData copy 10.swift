@@ -10,7 +10,7 @@ class DatabaseManager {
     init() {
         // Assume that the database connection setup is done here
     }
-    
+     
     func findUser(username: String) {
         let queryStatementString = "SELECT * FROM Users WHERE Username = '\(username)';"
         var queryStatement: OpaquePointer? = nil
