@@ -55,9 +55,9 @@ override:
                 args: >-
                   --quiet config --severity HIGH,CRITICAL -f json --ignorefile
                   /opt/.trivyignore_ds029 ${WORK_DIR:-.}
-    kubernetes-iac-misconfiguration-detection:
+    sast:
       jobs:
-        iac-misconfig-detection-kubernetes:
+        static-code-analysis-python-semgrep:
           runner:
             setup:
               checkout: true
