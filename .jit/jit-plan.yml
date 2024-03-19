@@ -57,7 +57,7 @@ override:
                   /opt/.trivyignore_ds029 ${WORK_DIR:-.}
     sast:
       jobs:
-        static-code-analysis-python-semgrep:
+        static-code-analysis-swift:
           runner:
             setup:
               checkout: true
