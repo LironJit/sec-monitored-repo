@@ -61,5 +61,5 @@ override:
           runner:
             setup:
               checkout: true
-              timeout_minutes: 0
+              timeout_minutes: 1
             type: github_actions
