@@ -1,0 +1,11 @@
+{
+    "version": "1.0.0",
+    "description": "Install serverless dependencies",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "browserslist": "4.0.1",
+        "plist": "^1.2.0"
+    }
+  }
+  
